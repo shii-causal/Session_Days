@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +23,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/calendar', function() {
-   return view('calendar.edit_schedule'); 
+//カレンダー表示画面
+Route::controller(ScheduleController::class)->middleware(['auth'])->group(function(){
+    Route::get('/calendar', 'show')->name('show');
+    Route::post('/calendar/create', 'create')->name('create'); //予定追加
 });
 
 Route::middleware('auth')->group(function () {
