@@ -31,6 +31,7 @@
                 <div class="modal-contents">
                     <form method="POST" action="{{ route('create') }}">
                         @csrf
+                        <input id="user_id" name="user_id" type="hidden" value="{{ Auth::user()->id }}"/>
                         <label for="title">イベント名</label>
                         <input id="title" class="input-title" type="text" name="title" value=""/>
                         <label for="start_date">開始日</label>
@@ -40,7 +41,7 @@
                         <label for="start_time">開始時刻</label>
                         <input id="start_time" class="input-start_time input-time" type="time" step="60" name="start_time" value=""/>
                         <label for="end_time">終了時刻</label>
-                        <input id="end_time" class="input-end_time input-time" type="time" step="300" name="end_time" value=""/><br>
+                        <input id="end_time" class="input-end_time input-time" type="time" step="60" name="end_time" value=""/><br>
                         <label for="body">イベント内容</label>
                         <textarea id="body" rows="3" name="body" value=""></textarea>
                         <button type="button" onclick="closeAddModal()">キャンセル</button>

@@ -27,6 +27,7 @@ Route::get('/dashboard', function () {
 Route::controller(ScheduleController::class)->middleware(['auth'])->group(function(){
     Route::get('/calendar', 'show')->name('show');
     Route::post('/calendar/create', 'create')->name('create'); //予定追加
+    Route::post('/calendar/get', 'get')->name('get'); //DBの予定を反映
 });
 
 Route::middleware('auth')->group(function () {
