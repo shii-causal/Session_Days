@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('body')->nullable()->comment('イベント内容');
             $table->date('start_date')->comment('開始日');
             $table->date('end_date')->comment('終了日');
-            $table->time('start_time')->nullable()->comment('開始時間');
-            $table->time('end_time')->nullable()->comment('終了時間');
+            $table->datetime('start_time')->nullable()->comment('開始日時');
+            $table->datetime('end_time')->nullable()->comment('終了日時');
             $table->timestamps();
             $table->softDeletes();
         });
