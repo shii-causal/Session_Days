@@ -38,10 +38,16 @@
                         <input id="start_date" class="input-start_date input-date" type="date" name="start_date" value=""/>
                         <label for="end_date">終了日</label>
                         <input id="end_date" class="input-end_date date input-date" type="date" name="end_date" value=""/><br>
-                        <label for="start_time">開始時刻</label>
-                        <input id="start_time" class="input-start_time input-time" type="time" step="60" name="start_time" value=""/>
-                        <label for="end_time">終了時刻</label>
-                        <input id="end_time" class="input-end_time input-time" type="time" step="60" name="end_time" value=""/><br>
+                        <label for="all_day">終日</label>
+                        <input id="all_day" class="all_day" type="checkbox" name="all_day" value"true"/><br><br>
+                        
+                        <div class="time">
+                            <label for="start_time">開始時刻</label>
+                            <input id="start_time" class="input-start_time input-time" type="time" step="60" name="start_time" value=""/>
+                            <label for="end_time">終了時刻</label>
+                            <input id="end_time" class="input-end_time input-time" type="time" step="60" name="end_time" value=""/><br>
+                        </div>
+                        
                         <label for="body">イベント内容</label>
                         <textarea id="body" rows="3" name="body" value=""></textarea>
                         <button type="button" onclick="closeAddModal()">キャンセル</button>
@@ -79,7 +85,7 @@ body {
 /* モーダル */
 .modal-contents{
     background-color: white;
-    height: 400px;
+    height: 450px;
     width: 600px;
     padding: 20px;
 }
@@ -111,5 +117,10 @@ textarea{
     border: 1px solid black;
     border-radius: 5px;
     resize: none;
+}
+
+/* 終日チェックボックスのチェック時 */
+.all_day:checked ~ .time{
+    display: none;
 }
 </style>

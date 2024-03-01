@@ -23,8 +23,8 @@ class ScheduleSeeder extends Seeder
                 'body' => '終日',
                 'start_date' => '2024-02-10',
                 'end_date' => '2024-02-12',
-                'start_time' => '2024-02-10',
-                'end_time' => '2024-02-12',
+                'start_time' => NULL,
+                'end_time' => NULL,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
         ]);
@@ -35,8 +35,8 @@ class ScheduleSeeder extends Seeder
                 'body' => NULL,
                 'start_date' => '2024-02-15',
                 'end_date' => '2024-02-15',
-                'start_time' => '2024-02-15 13:00',
-                'end_time' => '2024-02-15 14:00',
+                'start_time' => '13:00',
+                'end_time' => '14:00',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
         ]);
