@@ -37,6 +37,7 @@ if (calendarEl !== null) {
     
                     // 新規予定追加モーダルを開く
                     document.getElementById('modal-add').style.display = 'flex';
+
                 }
             }
         },
@@ -50,8 +51,14 @@ if (calendarEl !== null) {
         
         //高さをウィンドウのサイズにそろえる
         height: "auto", 
-        //カレンダーを日本語で表示
+        // カレンダーを日本語で表示
         locale: "ja",
+        // カレンダーの日付に日を表示しない
+        dayCellContent: function(e) {
+            e.dayNumberText = e.dayNumberText.replace('日', '');
+        },
+        // イベントの終了時刻を表示する
+        displayEventEnd: true,
         
         // DBに登録した予定を表示する
         events: function (info, successCallback, failureCallback) { // eventsはページが切り替わるたびに実行される
