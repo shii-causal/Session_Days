@@ -49,4 +49,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Schedule::class);  
     }
+    
+    // Eventsに対するリレーション（１対多）：作成したイベント
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+    
+    // Eventsに対するリレーション（多対多）：参加するイベント
+    public function attend_events()
+    {
+        return $this->belongsToMany(Event::class);
+    }
 }
