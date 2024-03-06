@@ -48,7 +48,6 @@
                         <div class="deadline">
                             <h2>回答期限</h2>
                             <input type="date" name="deadline_date" value=""/>
-                            <input type="time" name="deadline_time" value=""/>
                         </div>
                         <button type="submit" value="create_event">作成</button>
                     </form>
@@ -63,7 +62,7 @@
                 <p>{{ $url }}</p>
                 
                 <!--参加希望画面に移動する-->
-                <a href="{{ $url }}">参加希望者一覧に移動する</a>
+                <a href="{{ $url }}">参加希望者一覧に移動する</a><br>
             @endif
             
             <!--ホーム画面に戻る-->

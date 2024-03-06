@@ -36,6 +36,9 @@ class EventController extends Controller
         $event->deadline = $request['deadline_date']." ".$request['deadline_time'];
         $event->save();
         
+        // event_usersテーブルに登録
+        $event->users()->attach($request['user_id']);
+        
         //有効期限の設定
         $now = new Carbon(); //現在の日時を取得
         $deadline = new Carbon($event->deadline); //回答期限をCarbonインスタンスに変換
@@ -64,5 +67,17 @@ class EventController extends Controller
         }
     
         return view("events.attend_event")->with('event', $event);
+    }
+    
+    // 参加希望登録
+    public function attendEvent(Request $request, Event $event){
+        $input_event = $request['event'];
+        $input_user = $request['user'];
+        
+        // event_usersテーブルに登録
+        $event->users()->attach($input_user);
+        
+        // 参加希望画面に戻る
+        return back();
     }
 }

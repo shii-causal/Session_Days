@@ -34,8 +34,9 @@ Route::controller(ScheduleController::class)->middleware(['auth'])->group(functi
 //イベント表示画面
 Route::controller(EventController::class)->middleware(['auth'])->group(function(){
     Route::get('/events/create', 'newEvent')->name('newEvent'); //イベント作成画面の表示
-    Route::post('/events/create', 'createEvent')->name('createEvent'); //予定追加
+    Route::post('/events/create', 'createEvent')->name('createEvent'); // イベント作成
     Route::get('/events/create/result{event}', 'attend')->name('attend'); //イベント参加希望画面の表示
+    Route::post('/events/attend/{event}/{user}', 'attendEvent')->name('attendEvent'); // イベント参加希望登録
 });
 
 Route::middleware('auth')->group(function () {
