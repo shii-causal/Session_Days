@@ -53,10 +53,6 @@ if (calendarEl !== null) {
         height: "auto", 
         // カレンダーを日本語で表示
         locale: "ja",
-        // カレンダーの日付に日を表示しない
-        dayCellContent: function(e) {
-            e.dayNumberText = e.dayNumberText.replace('日', '');
-        },
         // イベントの終了時刻を表示する
         displayEventEnd: true,
         

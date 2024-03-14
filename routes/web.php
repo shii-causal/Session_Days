@@ -37,6 +37,8 @@ Route::controller(EventController::class)->middleware(['auth'])->group(function(
     Route::post('/events/create', 'createEvent')->name('createEvent'); // イベント作成
     Route::get('/events/create/result{event}', 'attend')->name('attend'); //イベント参加希望画面の表示
     Route::post('/events/attend/{event}/{user}', 'attendEvent')->name('attendEvent'); // イベント参加希望登録
+    Route::get('/events/adjust/{event}', 'adjust')->name('adjust'); // 日程調整画面の表示
+    Route::get('/events/adjust', 'adjustSchedule')->name('adjustSchedule'); // イベント参加者の日程抽出
 });
 
 Route::middleware('auth')->group(function () {

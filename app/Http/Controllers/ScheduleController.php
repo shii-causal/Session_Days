@@ -50,8 +50,6 @@ class ScheduleController extends Controller
         $start_date = date('Y-m-d', $request->input('start_date') / 1000); // 日付変換（JSのタイムスタンプはミリ秒なので秒に変換）
         $end_date = date('Y-m-d', $request->input('end_date') / 1000);
         
-       
-            
         // カレンダーが表示している期間の予定を取得
         $scheduleData = $schedule->query()
             ->select(

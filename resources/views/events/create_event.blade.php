@@ -39,7 +39,8 @@
                         </div>
                         <div class="date">
                             <h3>日程調整時期</h3>
-                            <p>開始日
+                            <p>
+                                開始日
                                 <input type="date" name="start_date" value=""/>
                                 終了日
                                 <input type="date" name="end_date" value=""/>

@@ -20,10 +20,10 @@ class EventSeeder extends Seeder
             
             'user_id' => '1',
             'title' => '新規イベント',
-            'body' => '2月中に開催予定',
-            'start_date' => '2024-02-01',
-            'end_date' => '2024-02-29',
-            'deadline' => '2024-02-20',
+            'body' => '3月中に開催予定',
+            'start_date' => '2024-03-01',
+            'end_date' => '2024-03-29',
+            'deadline' => '2024-03-20',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
             
