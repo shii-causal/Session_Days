@@ -240,7 +240,7 @@ class EventController extends Controller
         // 日付順に並び替え
         ksort($free_date_list);
         
-        $return = $user_bit_schedule_list[1];
+        $return = $free_date_list;
         
         // 全員の空き時間が合わない場合
         if ($free_date_list == NULL) {

@@ -98,11 +98,13 @@
                 @foreach ($return as $day=>$return)
                     <p>{{ date('Y年n月j日', strtotime($day)) }}</p>
                     <p>
+                        @foreach ($return as $return)
                             {{ $return }}
+                        @endforeach
                     </p><br>
                 @endforeach
-
-            @endif    
+            
+            @endif
             
             <!--ホーム画面に戻る-->
             <a href="#">戻る</a>
